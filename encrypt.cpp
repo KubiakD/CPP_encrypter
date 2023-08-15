@@ -1,7 +1,11 @@
+#include <iostream>
 #include "encrypt.h"
+#include <string>
+using namespace std;
+std::string alphabet {"abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
 
-string encrypt_message(string& message, string& key) {
-    string encrypted_message{};
+std::string encrypt_message(std::string& message, std::string& key) {
+    std::string encrypted_message{};
     for (char c : message) {
         size_t current_letter_index{ alphabet.find(c) };
         encrypted_message += key.at(current_letter_index);
@@ -10,8 +14,8 @@ string encrypt_message(string& message, string& key) {
     return encrypted_message;
 }
 
-string decrypt_message(string& message, string& key) {
-    string decrypted_message{};
+std::string decrypt_message(std::string& message, std::string& key) {
+    std::string decrypted_message{};
     for (char c : message) {
         size_t current_letter_index{ key.find(c) };
         decrypted_message += alphabet.at(current_letter_index);
@@ -20,13 +24,13 @@ string decrypt_message(string& message, string& key) {
     return decrypted_message;
 }
 
-string encrypt_with_key(string& message, string& key) {
+std::string encrypt_with_key(std::string& message, std::string& key) {
     size_t key_length = key.length();
     size_t message_length = message.length();
     size_t counter = floor(message_length / key_length);
     size_t remainder = message_length % (key_length * counter);
 
-    string modified_key{};
+    std::string modified_key{};
     for (size_t i{ 0 }; i < counter; i++)
         modified_key.append(key);
     modified_key += key.substr(0, remainder);

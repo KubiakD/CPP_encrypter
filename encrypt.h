@@ -1,9 +1,10 @@
-#ifndef _ENCRYPT_H
-#define _ENCRYPT_H
-string alphabet {"abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
-string encrypt_with_key(string& message, string& key);
-string decrypt_message(string& message, string& key);
-string encrypt_message(string& message, string& key);
+#ifndef ENCRYPT_H
+#define ENCRYPT_H
 
+#include <string>
+
+std::string encrypt_message(std::string& message, std::string& key);
+std::string decrypt_message(std::string& message, std::string& key);
+std::string encrypt_with_key(std::string& message, std::string& key);
 
 #endif
