@@ -2,16 +2,18 @@
 #include <string>
 #include <cmath>
 #include "encrypt.h"
+#include "menu.h"
 
 using namespace std;
 
 int main() {
+    int user_choice = display_menu();
     string message {};
     //string key {"qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM "};
     string key{};
-    cout << "Enter your message: " << endl;
-    getline(cin, message);
-    cout << "Enter your key: " << endl;
+    //cout << "Enter your message: " << endl;
+    //getline(cin, message);
+    //cout << "Enter your key: " << endl;
     cin >> key;
     string encrypted_message = encrypt_with_key(message, key);
     //decrypt_message(encrypted_message, key);
