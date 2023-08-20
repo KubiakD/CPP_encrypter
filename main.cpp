@@ -12,6 +12,7 @@ int main() {
     do
     {
         user_choice = display_menu();
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     switch (user_choice) 
     {
     case '1':
@@ -25,7 +26,6 @@ int main() {
         string key = get_key();
         string encrypted_message = encrypt_with_key(message, key);
         cout << encrypted_message << endl;
-        //cout << "encrypt message custom" << endl;
         break;
     }
     case '3':

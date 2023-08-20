@@ -4,7 +4,6 @@ using std::cout;
 using std::cin;
 using std::endl;
 char display_menu() {
-	//std::string input {};
 	char choice;
 	cout << "Select option" << endl;
 	cout << "1 - Encrypt message with standard key" << endl;
