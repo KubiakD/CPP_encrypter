@@ -4,6 +4,22 @@
 using namespace std;
 std::string alphabet {"abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
 
+std::string get_message()
+{
+    std::string message {};
+    cout << "Enter your message: " << endl;
+    getline(cin, message);
+    return message;
+}
+
+std::string get_key()
+{
+    std::string key {};
+    cout << "Enter your key: " << endl;
+    getline(cin, key);
+    return key;
+}
+
 std::string encrypt_message(std::string& message, std::string& key) {
     std::string encrypted_message{};
     for (char c : message) {
