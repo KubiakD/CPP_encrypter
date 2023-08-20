@@ -1,22 +1,44 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <cctype>
 #include "encrypt.h"
 #include "menu.h"
 
 using namespace std;
 
 int main() {
-    int user_choice = display_menu();
-    string message {};
-    //string key {"qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM "};
-    string key{};
-    //cout << "Enter your message: " << endl;
-    //getline(cin, message);
-    //cout << "Enter your key: " << endl;
-    cin >> key;
-    string encrypted_message = encrypt_with_key(message, key);
-    //decrypt_message(encrypted_message, key);
-    cout << encrypted_message << endl;
+    char user_choice;
+    do
+    {
+        user_choice = display_menu();
+    switch (user_choice) 
+    {
+    case '1':
+        //string key {"qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM "};
+        //string encrypted_message = encrypt_message();
+        cout << "encrypt message standard" << endl;
+        break;
+    case '2':
+    {
+        string message = get_message();
+        string key = get_key();
+        string encrypted_message = encrypt_with_key(message, key);
+        cout << encrypted_message << endl;
+        //cout << "encrypt message custom" << endl;
+        break;
+    }
+    case '3':
+        //string decrypted_message = decrypt_message();
+        cout << "decrypt message" << endl;
+        break;
+    case '9':
+        cout << "See you again!" << endl;
+        break;
+    default:
+        cout << "Wrong input!" << endl;
+        break;
+    }
+    } while (user_choice != '9');
     return 0;
 }

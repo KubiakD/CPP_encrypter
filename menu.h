@@ -1,2 +1,2 @@
 #pragma once
-int display_menu();
+char display_menu();
