@@ -31,9 +31,11 @@ int main() {
         break;
     }
     case '3':
-        //string decrypted_message = decrypt_message();
-        cout << "decrypt message" << endl;
+    {
+        string decrypted_message = decrypt_message();
+        cout << decrypted_message << endl;
         break;
+    }
     case '9':
         cout << "See you again!" << endl;
         break;

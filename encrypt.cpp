@@ -31,7 +31,9 @@ std::string encrypt_message(std::string& message) {
     return encrypted_message;
 }
 
-std::string decrypt_message(std::string& message, std::string& key) {
+std::string decrypt_message() {
+    string message = get_message();
+    string key{ "qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM" };
     std::string decrypted_message{};
     for (char c : message) {
         size_t current_letter_index{ key.find(c) };

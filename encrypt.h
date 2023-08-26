@@ -4,7 +4,7 @@
 #include <string>
 
 std::string encrypt_message(std::string& message);
-std::string decrypt_message(std::string& message, std::string& key);
+std::string decrypt_message();
 std::string encrypt_with_key(std::string& message, std::string& key);
 std::string get_message();
 std::string get_key();
