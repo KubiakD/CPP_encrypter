@@ -17,7 +17,8 @@ int main() {
     {
     case '1':
     {
-        string encrypted_message = encrypt_message();
+        string message = get_message();
+        string encrypted_message = encrypt_message(message);
         cout << encrypted_message << endl;
         break;
     }

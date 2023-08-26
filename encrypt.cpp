@@ -20,8 +20,7 @@ std::string get_key()
     return key;
 }
 
-std::string encrypt_message() {
-    string message = get_message();
+std::string encrypt_message(std::string& message) {
     string key{ "qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"};
     std::string encrypted_message{};
     for (char c : message) {
