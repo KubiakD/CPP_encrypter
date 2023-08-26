@@ -16,10 +16,11 @@ int main() {
     switch (user_choice) 
     {
     case '1':
-        //string key {"qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM "};
-        //string encrypted_message = encrypt_message();
-        cout << "encrypt message standard" << endl;
+    {
+        string encrypted_message = encrypt_message();
+        cout << encrypted_message << endl;
         break;
+    }
     case '2':
     {
         string message = get_message();
